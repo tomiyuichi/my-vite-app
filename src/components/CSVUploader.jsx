@@ -15,10 +15,10 @@ function CSVUploader() {
     if (!file) return alert("Please select a file!");
 
     const formData = new FormData();
-    formData.append("csv", file);
+    formData.append("file", file);
 
     try {
-      const response = await fetch("http://localhost:3001/upload", {
+      const response = await fetch("http://localhost:3001/api/upload", {
         method: "POST",
         body: formData,
       });
